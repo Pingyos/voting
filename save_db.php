@@ -1,28 +1,28 @@
 <?php
 
 if (
-    isset($_POST['name_Title'])
+    isset($_POST['email'])
 ) {
 
     require_once 'connection.php';
-    $stmt = $conn->prepare("INSERT INTO poster
-      (eamil)
+    $stmt = $conn->prepare("INSERT INTO uesr
+      (email)
       VALUES
-      (:eamil)");
-    $stmt->bindParam(':eamil', $_POST['eamil'], PDO::PARAM_STR);
+      (:email)");
+    $stmt->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
     $result = $stmt->execute();
     $conn = null;
 
     if ($result) {
         echo '<script>
       swal({
-          title: "บันทึกข้อมูลบริจาคสำเร็จ", 
-          text: "ระบบจะทำการ Generator cq code เพื่อให้ท่านได้ชำระเงิน กรุณารอสักครู่",
+          title: "โหวดคะแนนสำเร็จ", 
+          text: "รอสักแปปนะครับ",
           type: "success", 
           timer: 3000, 
           showConfirmButton: false 
         }, function(){
-          window.location.href = "qrgenerator_receipt.php"; 
+          window.location.href = "index.php"; 
           });
     </script>';
     } else {

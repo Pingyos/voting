@@ -28,9 +28,9 @@
                                 foreach ($result as $t1) {
                                 ?>
                                     <div class="col-lg-6 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.2s">
-                                        <div class="col-lg-12 col-md-6 col-12 mb-4 ">
+                                        <div class="col-lg-12 col-md-12 col-12 mb-4 ">
                                             <div class="custom-block-wrap">
-                                                <img src="images/1.jpg class=" custom-block-image img-fluid" alt="">
+                                                <img src="images/1.jpg" custom-block-image img-fluid" while="300" height="500">
                                                 <div class="custom-block">
                                                     <div class="custom-block-body">
                                                         <h5 class="mb-3"><?= $t1['poster_name']; ?></h5>
@@ -42,33 +42,34 @@
                                         </div>
                                     </div>
                                 <?php } ?>
-                                <div class="modal fade" id="my_popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="col-lg-12 col-12 mt-2">
-                                                    <label class="control-label">Email <span style="color:red;">*</span></label>
-                                                    <input type="email" name="rec_email" pattern="[^ @]*@[^ @]*" class="form-control">
+                                <form method="POST" role="form">
+                                    <div class="modal fade" id="my_popup" tabindex="-1" aria-labelledby="modal_title" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="modal_title">Modal title</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label for="email">Email <span style="color:red;">*</span></label>
+                                                        <input type="email" name="email" id="email" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    <?php echo '<pre>';
+                                                    print_r($_POST);
+                                                    echo '</pre>';
+                                                    ?>
+                                                    <?php require_once('save_db.php'); ?>
                                                 </div>
                                             </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                                <?php echo '<pre>';
-                                                print_r($_POST);
-                                                echo '</pre>';
-                                                ?>
-                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
+                                </form>
+
                             </div>
-                            <?php require_once('save_db.php'); ?>
                         </div>
                     </div>
                 </div>
