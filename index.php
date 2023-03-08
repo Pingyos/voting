@@ -26,7 +26,7 @@
                             foreach ($result as $t1) {
                             ?>
                                 <div class="col-lg-6 col-md-6 col-12">
-                                    <a onclick="$('#my_popup').modal('show')">
+                                    <a href="#?poster_id=<?= $t1['poster_id']; ?>" onclick="$('#my_popup').modal('show')">
                                         <img src="images/1.JPG" class="about-image ms-lg-auto bg-light shadow-lg img-fluid mx-auto" alt="">
                                     </a>
                                     <div class="custom-block-body text-center">
@@ -44,6 +44,7 @@
                         <div class="modal fade" id="my_popup" tabindex="-1" aria-labelledby="modal_title" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
+
                                     <div class="modal-header">
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
@@ -55,20 +56,18 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="form-control">Submit</button>
-
                                         <?php require_once('save_db.php'); ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
-                    <?php echo '<pre>';
-                    print_r($_POST);
-                    echo '</pre>';
-                    ?>
                 </div>
             </div>
-            </div>
+            <?php echo '<pre>';
+            print_r($_POST);
+            echo '</pre>';
+            ?> 
         </section>
 
     </main>
