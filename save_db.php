@@ -1,11 +1,13 @@
 <meta charset="utf-8">
 <?php
-if (isset($_POST['email'])) {
+
+if (isset($_POST['email']) && isset($_POST['poster_id'])) {
   $email = $_POST['email'];
+  $poster_id = $_POST['poster_id'];
 
   // Check if both email and poster_id are not empty
-  if (!empty($email)) {
-    // Check if the email already exists in the database
+  if (!empty($email) && !empty($poster_id)) {
+    // Check if the email already exists in the database for this poster_id
     $check_stmt = $conn->prepare("SELECT COUNT(*) FROM uesr WHERE email = ?");
     $check_stmt->execute([$email]);
     $num = $check_stmt->fetchColumn();
@@ -23,9 +25,9 @@ if (isset($_POST['email'])) {
       exit;
     }
 
-    // Insert the email and ID into the database
-    $insert_stmt = $conn->prepare("INSERT INTO uesr (email) VALUES (?)");
-    $result = $insert_stmt->execute([$email]);
+    // Insert the email and poster_id into the database
+    $insert_stmt = $conn->prepare("INSERT INTO uesr (email, poster_id) VALUES (?, ?)");
+    $result = $insert_stmt->execute([$email, $poster_id]);
 
     if ($result) {
       // Display success message and redirect to the next page
@@ -66,5 +68,6 @@ if (isset($_POST['email'])) {
     exit;
   }
 }
+
 
 ?>
