@@ -13,7 +13,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-12 text-center mb-4">
-                        <h2>ระบบโหวด</h2>
+                        <h3>ระบบลงคะแนนโหวด</h3>
+                        <h5>Innovation fon Heath: Show & Share IV</h5>
                     </div>
                     <!-- Projects Start -->
                     <div class="container">
@@ -31,7 +32,7 @@
                                     </a>
                                     <div class="custom-block-body text-center">
                                         <h4 class="text mt-lg-3 mb-lg-3"><?= $t1['poster_name']; ?></h4>
-                                        <p class="text">Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito Professional charity theme based</p>
+                                        <p class="text"><?= $t1['poster_details']; ?></p>
                                     </div>
                                 </div>
 
@@ -47,6 +48,7 @@
                                 <div class="modal-content">
 
                                     <div class="modal-header">
+                                        <p>การโหวดคะแนน 1 ท่าน ต่อ 1 การโหวด</p>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
