@@ -28,7 +28,7 @@
                             foreach ($result as $t1) {
                             ?>
                                 <div class="col-lg-4 col-md-6 col-6">
-                                    <a href="#?poster_id=<?= $t1['poster_id']; ?>" onclick="$('#my_popup').modal('show'); $('#poster_id').val(<?= $t1['poster_id']; ?>); $('#poster_level').val('<?= $t1['poster_level']; ?>'); $('#poster_presenter').val('<?= $t1['poster_presenter']; ?>');">
+                                    <a href="#?poster_id=<?= $t1['poster_id']; ?>" onclick="$('#my_popup').modal('show'); $('#poster_id').val(<?= $t1['poster_id']; ?>); $('#poster_level').val('<?= $t1['poster_level']; ?>'); $('#poster_presenter').val('<?= $t1['poster_presenter']; ?>');$('#poster_name').val('<?= $t1['poster_name']; ?>');">
                                         <img src="upload/<?= $t1['img_file']; ?>" class="about-image ms-lg-auto bg-light shadow-lg img-fluid mx-auto" alt="">
                                     </a>
                                     <div class="custom-block-body text-center">
@@ -60,6 +60,7 @@
                                             <input type="text" name="poster_id" id="poster_id" hidden>
                                             <input type="text" name="poster_level" id="poster_level" hidden>
                                             <input type="text" name="poster_presenter" id="poster_presenter" hidden>
+                                            <input type="text" name="poster_name" id="poster_name" hidden>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
