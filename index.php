@@ -6,7 +6,9 @@
 <body id="section_1">
 
     <?php require_once('header.php');
-    require_once('nav.php'); ?>
+    require_once('nav.php');
+    require_once('form_sql.php');
+    ?>
 
     <main>
         <section class="section-padding" id="section_2">

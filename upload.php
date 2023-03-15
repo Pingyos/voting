@@ -84,7 +84,7 @@
 
                                 //sql insert
                                 $stmt = $conn->prepare("INSERT INTO poster (poster_name,poster_details,img_file)
-    VALUES (:poster_name, :poster_details,'$newname')");
+                                VALUES (:poster_name, :poster_details,'$newname')");
                                 $stmt->bindParam(':poster_name', $poster_name, PDO::PARAM_STR);
                                 $stmt->bindParam(':poster_details', $poster_details, PDO::PARAM_STR);
                                 $result = $stmt->execute();
