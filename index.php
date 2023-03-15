@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="submit" class="form-control">ยืนยันการโหวด</button>
+                                        <button type="submit" class="form-control">ยืนยันการโหวต</button>
                                         <?php require_once('save_db.php'); ?>
                                     </div>
                                 </div>
@@ -95,7 +95,7 @@
                 <div class="modal-body">
                     <center>
                         <h3>FON CMU Innovation: Show & Share</h3>
-                        <h5>17 กุมภาพันธ์ พ.ศ. 2566</h5>
+                        <h5>17 มีนาคม พ.ศ. 2566</h5>
                         <p>ท่านสามารถ log in โดยใช้ e-mail ที่ใช้ในการลงทะเบียนเข้าร่วมงาน
                             และสามารถโหวตนวัตกรรมที่ท่านประทับใจได้เพียง 1 ผลงานที่เท่านั้น
                             ปิดระบบโหวต เวลา 15.30 น.</p>
