@@ -13,9 +13,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-12 text-center mb-4">
-                        <h3>ระบบลงคะแนนโหวด</h3>
-                        <h5>Innovation fon Heath: Show & Share IV</h5>
+                        <h2>Popular Vote Award</h2>
                     </div>
+
                     <!-- Projects Start -->
                     <div class="container">
                         <div class="row">
@@ -48,7 +48,7 @@
                                 <div class="modal-content">
 
                                     <div class="modal-header">
-                                        <p>การโหวดคะแนน 1 ท่าน ต่อ 1 การโหวด</p>
+                                        <p>โหวตนวัตกรรมที่ท่านประทับใจได้เพียง 1 ผลงานที่เท่านั้น</p>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
@@ -59,7 +59,7 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="submit" class="form-control">Submit</button>
+                                        <button type="submit" class="form-control">ยืนยันการโหวด</button>
                                         <?php require_once('save_db.php'); ?>
                                     </div>
                                 </div>
@@ -79,7 +79,31 @@
     <?php require_once('footer.php'); ?>
     <script src="js/main.js"></script>
 
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery("#myModal").modal('show');
+        });
+    </script>
+    <!-- modal -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-md"> <!-- กำหนดขนาดของ modal เพิ่มได้นะครับ เช่น xs, sm, md, lg -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <h3>FON CMU Innovation: Show & Share</h3>
+                        <h5>17 กุมภาพันธ์ พ.ศ. 2566</h5>
+                        <p>ท่านสามารถ log in โดยใช้ e-mail ที่ใช้ในการลงทะเบียนเข้าร่วมงาน
+                            และสามารถโหวตนวัตกรรมที่ท่านประทับใจได้เพียง 1 ผลงานที่เท่านั้น
+                            ปิดระบบโหวต เวลา 15.30 น.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    </div>
 </body>
 
 </html>
