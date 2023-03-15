@@ -16,7 +16,16 @@
                     <div class="col-lg-12 col-12 text-center mb-4">
                         <h2>Popular Vote Award</h2>
                     </div>
-
+                    <div class="row">
+                        <div class="col-12 text-center mb-2">
+                            <ul class="list-inline mb-4" id="portfolio-flters">
+                                <li class="btn btn-outline-primary  active" data-filter="*">รวม</li>
+                                <li class="btn btn-outline-primary " data-filter=".A">ป.ตรี</li>
+                                <li class="btn btn-outline-primary " data-filter=".B">ป.โท</li>
+                                <li class="btn btn-outline-primary " data-filter=".C">อาจารย์</li>
+                            </ul>
+                        </div>
+                    </div>
                     <!-- Projects Start -->
                     <div class="container">
                         <div class="row">
@@ -28,22 +37,25 @@
                             foreach ($result as $t1) {
                             ?>
                                 <div class="col-lg-4 col-md-6 col-6">
-                                    <a href="#?poster_id=<?= $t1['poster_id']; ?>" onclick="$('#my_popup').modal('show'); $('#poster_id').val(<?= $t1['poster_id']; ?>); $('#poster_level').val('<?= $t1['poster_level']; ?>'); $('#poster_presenter').val('<?= $t1['poster_presenter']; ?>');$('#poster_name').val('<?= $t1['poster_name']; ?>');">
-                                        <img src="upload/<?= $t1['img_file']; ?>" class="about-image ms-lg-auto bg-light shadow-lg img-fluid mx-auto" alt="">
-                                    </a>
-                                    <div class="custom-block-body text-center">
-                                        <h4 class="text mt-lg-3 mb-lg-3"><?= $t1['poster_name']; ?></h4>
-                                        <p class="text"><?= $t1['poster_level']; ?></p>
-                                        <p class="text"><?= $t1['poster_presenter']; ?></p>
+                                    <div class="portfolio-container">
+                                        <div class="portfolio-item <?= $t1['poster_level']; ?>">
+                                            <a href="#?poster_id=<?= $t1['poster_id']; ?>" onclick="$('#my_popup').modal('show'); $('#poster_id').val(<?= $t1['poster_id']; ?>); $('#poster_level').val('<?= $t1['poster_level']; ?>'); $('#poster_presenter').val('<?= $t1['poster_presenter']; ?>');$('#poster_name').val('<?= $t1['poster_name']; ?>');">
+                                                <img src="upload/<?= $t1['img_file']; ?>" class="about-image ms-lg-auto bg-light shadow-lg img-fluid mx-auto" alt="">
+                                            </a>
+                                            <div class="custom-block-body text-center">
+                                                <h4 class="text mt-lg-3 mb-lg-3"><?= $t1['poster_name']; ?></h4>
+                                                <p class="text"><?= $t1['poster_level']; ?></p>
+                                                <p class="text"><?= $t1['poster_presenter']; ?></p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
-
                             <?php
                             }
                             ?>
                         </div>
                     </div>
+
                     <form method="POST" role="form">
                         <div class="modal fade" id="my_popup" tabindex="-1" aria-labelledby="modal_title" aria-hidden="true">
                             <div class="modal-dialog">
@@ -82,8 +94,10 @@
     </main>
 
     <?php require_once('footer.php'); ?>
-    <script src="js/main.js"></script>
 
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function() {
             jQuery("#myModal").modal('show');

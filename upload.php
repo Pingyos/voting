@@ -19,7 +19,12 @@
                         <form action="" method="post" enctype="multipart/form-data">
                             <input type="text" name="poster_name" required class="form-control" placeholder="ชื่อภาพ"> <br>
                             <input type="text" name="poster_details" required class="form-control" placeholder="รายละเอียด"> <br>
-                            <input type="text" name="poster_level" required class="form-control" placeholder="ระดับ"> <br>
+                            <select name="poster_level" class="form-control" onchange="showInput1(this)">
+                                <option value="A">ป.ตรี</option>
+                                <option value="B">ป.โท</option>
+                                <option value="C">อาจารย์</option>
+                            </select>
+                            <br>
                             <input type="text" name="poster_presenter" required class="form-control" placeholder="ผู้นำเสนอ"> <br>
                             <font color="red">*อัพโหลดได้เฉพาะ .jpeg , .jpg , .png </font>
                             <input type="file" name="img_file" required class="form-control" accept="image/jpeg, image/png, image/jpg"> <br>
