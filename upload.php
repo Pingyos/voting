@@ -19,6 +19,8 @@
                         <form action="" method="post" enctype="multipart/form-data">
                             <input type="text" name="poster_name" required class="form-control" placeholder="ชื่อภาพ"> <br>
                             <input type="text" name="poster_details" required class="form-control" placeholder="รายละเอียด"> <br>
+                            <input type="text" name="poster_level" required class="form-control" placeholder="ระดับ"> <br>
+                            <input type="text" name="poster_presenter" required class="form-control" placeholder="ผู้นำเสนอ"> <br>
                             <font color="red">*อัพโหลดได้เฉพาะ .jpeg , .jpg , .png </font>
                             <input type="file" name="img_file" required class="form-control" accept="image/jpeg, image/png, image/jpg"> <br>
                             <button type="submit" class="form-control">Submit</button>
@@ -30,6 +32,8 @@
                                     <th>ลำดับ</th>
                                     <th>ชื่อ</th>
                                     <th>รายละเอียด</th>
+                                    <th>ระดับ</th>
+                                    <th>ผู้นำเสนอ</th>
                                     <th>รูปภาพ</th>
                                 </tr>
                             </thead>
@@ -46,6 +50,8 @@
                                         <td><?= $k['poster_id']; ?></td>
                                         <td><?= $k['poster_name']; ?></td>
                                         <td><?= $k['poster_details']; ?></td>
+                                        <td><?= $k['poster_level']; ?></td>
+                                        <td><?= $k['poster_presenter']; ?></td>
                                         <td><img src="upload/<?= $k['img_file']; ?>" width="70px"></td>
                                     <?php } ?>
                             </tbody>
@@ -81,12 +87,16 @@
                                 //ประกาศตัวแปรรับค่าจากฟอร์ม
                                 $poster_name = $_POST['poster_name'];
                                 $poster_details = $_POST['poster_details'];
+                                $poster_level = $_POST['poster_level'];
+                                $poster_presenter = $_POST['poster_presenter'];
 
                                 //sql insert
-                                $stmt = $conn->prepare("INSERT INTO poster (poster_name,poster_details,img_file)
-                                VALUES (:poster_name, :poster_details,'$newname')");
+                                $stmt = $conn->prepare("INSERT INTO poster (poster_name,poster_details, poster_level, poster_presenter, img_file)
+                                VALUES (:poster_name, :poster_details, :poster_level, :poster_presenter,'$newname')");
                                 $stmt->bindParam(':poster_name', $poster_name, PDO::PARAM_STR);
                                 $stmt->bindParam(':poster_details', $poster_details, PDO::PARAM_STR);
+                                $stmt->bindParam(':poster_level', $poster_level, PDO::PARAM_STR);
+                                $stmt->bindParam(':poster_presenter', $poster_presenter, PDO::PARAM_STR);
                                 $result = $stmt->execute();
                                 //เงื่อนไขตรวจสอบการเพิ่มข้อมูล
                                 if ($result) {

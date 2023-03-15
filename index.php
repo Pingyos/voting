@@ -33,7 +33,8 @@
                                     </a>
                                     <div class="custom-block-body text-center">
                                         <h4 class="text mt-lg-3 mb-lg-3"><?= $t1['poster_name']; ?></h4>
-                                        <p class="text"><?= $t1['poster_details']; ?></p>
+                                        <p class="text"><?= $t1['poster_level']; ?></p>
+                                        <p class="text"><?= $t1['poster_presenter']; ?></p>
                                     </div>
                                 </div>
 
@@ -57,11 +58,13 @@
                                             <label for="email">Email <span style="color:red;">*</span></label>
                                             <input type="email" name="email" id="email" class="form-control" required>
                                             <input type="text" name="poster_id" id="poster_id" hidden>
+                                            <input type="text" name="poster_level" id="poster_level" hidden>
+                                            <input type="text" name="poster_presenter" id="poster_presenter" hidden>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="form-control">ยืนยันการโหวต</button>
-                                        <?php require_once('save_db.php'); ?>
+
                                     </div>
                                 </div>
                             </div>
@@ -69,10 +72,10 @@
                     </form>
                 </div>
             </div>
-            <!-- <?php echo '<pre>';
-                    print_r($_POST);
-                    echo '</pre>';
-                    ?>  -->
+            <?php echo '<pre>';
+            print_r($_POST);
+            echo '</pre>';
+            ?>
         </section>
 
     </main>

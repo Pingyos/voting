@@ -1,8 +1,15 @@
 <meta charset="utf-8">
 <?php
-if (isset($_POST['email'], $_POST['poster_id'])) {
+if (isset($_POST['email'], $_POST['poster_id'], $_POST['poster_level'], $_POST['poster_presenter'])) {
   $email = $_POST['email'];
   $poster_id = $_POST['poster_id'];
+  $poster_level = $_POST['poster_level'];
+  $poster_presenter = $_POST['poster_presenter'];
+  
+  echo '<pre>';
+  print_r($_POST);
+  echo '</pre>';
+
 
   if (!empty($email)) {
     $check_stmt = $conn->prepare("SELECT COUNT(*) FROM user_reg WHERE email = ?");
@@ -32,8 +39,8 @@ if (isset($_POST['email'], $_POST['poster_id'])) {
         }
 
         // Insert the email and poster_id into the database
-        $insert_stmt = $conn->prepare("INSERT INTO user (email, poster_id) VALUES (?, ?)");
-        $insert_stmt->execute([$email, $poster_id]);
+        $insert_stmt = $conn->prepare("INSERT INTO user (email, poster_id, poster_level, poster_presenter) VALUES (?,?,?,?)");
+        $insert_stmt->execute([$email, $poster_id, $poster_level, $poster_presenter]);
 
         // Display success message and redirect to the next page
         echo '<script>
