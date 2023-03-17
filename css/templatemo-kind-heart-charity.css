@@ -1722,6 +1722,18 @@ blockquote::before {
 .portfolio-item:hover .portfolio-overlay .btn {
   opacity: 1;
 }
+.portfolio-item .portfolio-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  bottom: 30px;
+  left: 30px;
+  opacity: 0;
+  transition: .5s;
+}
 
+.portfolio-item:hover .portfolio-btn {
+  opacity: 1;
+}
 
 
